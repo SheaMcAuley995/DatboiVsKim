@@ -82,12 +82,18 @@
     <Reference Include="UnityEditor.iOS.Extensions.Common">
       <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Common.dll</HintPath>
     </Reference>
+    <Reference Include="Assembly-UnityScript-firstpass">
+      <HintPath>Library\ScriptAssemblies\Assembly-UnityScript-firstpass.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Grass And Flowers Pack 1\Example Scene\SimpleTextureDrawing.cs" />
+    <Compile Include="Assets\SheaAssets\_Scripts\WanderMechanic.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Grass And Flowers Pack 1\Example Scene\Skyboxes\_skybox info.txt" />
+    <None Include="Assets\SheaAssets\Kitten\Shaders\Alpha-Diffuse.shader" />
+    <None Include="Assets\SheaAssets\Kitten\Shaders\Normal-Diffuse.shader" />
     <None Include="Assets\laxer tree pkg\README.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
