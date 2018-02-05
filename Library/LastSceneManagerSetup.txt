@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/WyattScreams.unity
+- path: Assets/_WyattAssets/TimeToDie.unity
   isLoaded: 1
   isActive: 1
