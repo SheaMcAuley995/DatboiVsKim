@@ -302,6 +302,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05eb86777f95f4842ba120d39b67eb0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bullet: {fileID: 0}
+  bulletrb: {fileID: 0}
+  bulletspeed: 0
   closest: {fileID: 0}
   SearchRadius: 16.26
 --- !u!1 &961663994
