@@ -23,7 +23,6 @@ public class WanderScript : MonoBehaviour
 
     public void DoWander()
     {
-
         knuckles.destination = (transform.position + returnWanderPoints());
     }
 

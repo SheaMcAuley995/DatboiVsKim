@@ -85,6 +85,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\_WyattAssets\_Scripts\FollowKimScript.cs" />
+    <Compile Include="Assets\_WyattAssets\_Scripts\GetMoreWarriors.cs" />
+    <Compile Include="Assets\_WyattAssets\_Scripts\GlobalFlock.cs" />
+    <Compile Include="Assets\_WyattAssets\_Scripts\KimWander.cs" />
     <Compile Include="Assets\_WyattAssets\_Scripts\StateMachine.cs" />
     <Compile Include="Assets\_WyattAssets\_Scripts\WanderScript.cs" />
     <Compile Include="Assets\Grass And Flowers Pack 1\Example Scene\SimpleTextureDrawing.cs" />

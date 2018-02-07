@@ -27,9 +27,10 @@ GameObject:
   - component: {fileID: 114730220715705004}
   - component: {fileID: 114028541925088662}
   - component: {fileID: 114045016336569814}
+  - component: {fileID: 82475124462577392}
   m_Layer: 0
   m_Name: Wheel
-  m_TagString: Untagged
+  m_TagString: Knuckles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -59,7 +60,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1214183633383106}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.009325, y: 0.5, z: 0.7081342}
+  m_LocalPosition: {x: -9.4, y: 0.6, z: 9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4879940132599356}
@@ -184,6 +185,86 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!82 &82475124462577392
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1214183633383106}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 69ea9f57a3ff0c743aed3c09076b8649, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!114 &114028541925088662
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -212,9 +293,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18a721ac1ed4bd84cb42859102d41611, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1776419896275838, guid: ebfdc0763cd5b0a44981e9ed73d1b8d0, type: 2}
+  audio: {fileID: 82475124462577392}
+  Chasingclips:
+  - {fileID: 8300000, guid: c2b1b229382b84140971ecc0daf10c4d, type: 3}
+  - {fileID: 8300000, guid: 6a482bb8f8282ab458fcd79d31fbba00, type: 3}
+  - {fileID: 8300000, guid: 1e257917af25b4144bd59c88ba53a200, type: 3}
+  - {fileID: 8300000, guid: 69ea9f57a3ff0c743aed3c09076b8649, type: 3}
+  Roamclips:
+  - {fileID: 8300000, guid: 3a2931bfb2aeca648ae0e0c18c36e300, type: 3}
+  - {fileID: 8300000, guid: a393b8f9d3cd9174099ea978d386d085, type: 3}
+  - {fileID: 8300000, guid: 237fc624ad9f4cd42bd41543e2658ac3, type: 3}
+  - {fileID: 8300000, guid: 9c1bb1e0a04afd9428f1b3ddeee9cc31, type: 3}
+  target: {fileID: 1091530198920408, guid: ebfdc0763cd5b0a44981e9ed73d1b8d0, type: 2}
   knuckles: {fileID: 1214183633383106}
-  distance: 100
+  distance: 10
   uh: 0
 --- !u!114 &114730220715705004
 MonoBehaviour:
@@ -229,7 +321,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   distance: 100
-  target: {fileID: 1776419896275838, guid: ebfdc0763cd5b0a44981e9ed73d1b8d0, type: 2}
+  target: {fileID: 1091530198920408, guid: ebfdc0763cd5b0a44981e9ed73d1b8d0, type: 2}
   rb: {fileID: 54230000940922458}
 --- !u!135 &135076456576040706
 SphereCollider:

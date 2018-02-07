@@ -15,15 +15,20 @@ public class FollowKimScript : MonoBehaviour
 
     void Start ()
     {
+        target = GameObject.FindGameObjectWithTag("Kim");
         knuckles = GetComponent<NavMeshAgent>();
 	}
 
 
     public void DoFollow ()
     {
+        MoveTowardsPoint();
         float distancefrom = Vector3.Distance(transform.position, target.transform.position);
-         if(distancefrom <= distance)
-        knuckles.destination = (MoveTowardsPoint());
+
+        if (distancefrom <= distance)
+        {
+            knuckles.destination = MoveTowardsPoint();
+        }
     }
 
 
@@ -31,5 +36,4 @@ public class FollowKimScript : MonoBehaviour
     {
         return target.transform.position;
     }
-        
 }
