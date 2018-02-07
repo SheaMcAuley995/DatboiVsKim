@@ -19,15 +19,12 @@ public class KimWander : MonoBehaviour
     {
         knuckles = GetComponent<NavMeshAgent>();
     }
-
-
     public void Update()
     {
-        if(allowWander)
+        if (allowWander)
         {
             knuckles.destination = (transform.position + returnWanderPoints());
         }
-
     }
 
 

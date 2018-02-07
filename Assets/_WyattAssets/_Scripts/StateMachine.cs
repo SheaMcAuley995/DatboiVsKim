@@ -6,7 +6,7 @@ public class StateMachine : MonoBehaviour
 {
     FollowKimScript follow;
     WanderScript wander;
-
+    GetMoreWarriors flock;
 
     public new AudioSource audio;
     public AudioClip[] Chasingclips;
@@ -24,15 +24,14 @@ public class StateMachine : MonoBehaviour
         target = GameObject.FindGameObjectWithTag("Kim");
         follow = GetComponent<FollowKimScript>();
         wander = GetComponent<WanderScript>();
+        flock = GetComponent<GetMoreWarriors>();
 	}
 	
 
 	void Update () 
     {
-        //float delayTime = Random.Range(44100, 88200);
         float distancefrom = Vector3.Distance(knuckles.transform.position, target.transform.position);
-        Debug.Log(distancefrom);
-        Debug.Log("this is the targets position" + target.transform.position);
+        flock.DoFlock();
         if (distancefrom <= distance)
         {
             uh = true;
@@ -48,7 +47,7 @@ public class StateMachine : MonoBehaviour
 
             if (audio.isPlaying == false)
             {
-                audio.PlayOneShot(Chasingclips[Random.Range(0,5)]);
+                audio.PlayOneShot(Chasingclips[Random.Range(0,4)]);
             }
             follow.DoFollow();
         }

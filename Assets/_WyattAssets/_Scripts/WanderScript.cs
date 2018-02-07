@@ -12,9 +12,7 @@ public class WanderScript : MonoBehaviour
     public float jitter;
     public float distance;
     public Vector3 target;
-    public Rigidbody rb;
-
-
+    
     void Start()
     {
         knuckles = GetComponent<NavMeshAgent>();
@@ -23,7 +21,7 @@ public class WanderScript : MonoBehaviour
 
     public void DoWander()
     {
-        knuckles.destination = (transform.position + returnWanderPoints());
+        knuckles.destination = (returnWanderPoints());
     }
 
 

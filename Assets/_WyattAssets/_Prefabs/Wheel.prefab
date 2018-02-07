@@ -28,6 +28,7 @@ GameObject:
   - component: {fileID: 114028541925088662}
   - component: {fileID: 114045016336569814}
   - component: {fileID: 82475124462577392}
+  - component: {fileID: 114381843435012988}
   m_Layer: 0
   m_Name: Wheel
   m_TagString: Knuckles
@@ -281,7 +282,6 @@ MonoBehaviour:
   jitter: 100
   distance: 100
   target: {x: 0, y: 0, z: 0}
-  rb: {fileID: 54230000940922458}
 --- !u!114 &114045016336569814
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -308,6 +308,19 @@ MonoBehaviour:
   knuckles: {fileID: 1214183633383106}
   distance: 10
   uh: 0
+--- !u!114 &114381843435012988
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1214183633383106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0106619b0025ae40be4eca80bc6ef32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
+  radius: 10
 --- !u!114 &114730220715705004
 MonoBehaviour:
   m_ObjectHideFlags: 1
