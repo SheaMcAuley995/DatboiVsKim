@@ -88,6 +88,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Grass And Flowers Pack 1\Example Scene\SimpleTextureDrawing.cs" />
+    <Compile Include="Assets\KimAi.cs" />
+    <Compile Include="Assets\SheaAssets\_Scripts\FieldOfView.cs" />
+    <Compile Include="Assets\SheaAssets\_Scripts\KimAi.cs" />
+    <Compile Include="Assets\SheaAssets\_Scripts\SelectWaypointState.cs" />
+    <Compile Include="Assets\SheaAssets\_Scripts\TankAi.cs" />
+    <Compile Include="Assets\SheaAssets\_Scripts\TankPatrolState.cs" />
     <Compile Include="Assets\SheaAssets\_Scripts\WanderMechanic.cs" />
   </ItemGroup>
   <ItemGroup>
