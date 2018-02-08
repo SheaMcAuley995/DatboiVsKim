@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/SheaAssets/NuclearDeath.unity
+- path: Assets/SheaAssets/_Scenes/NuclearTestingZone.unity
   isLoaded: 1
   isActive: 1

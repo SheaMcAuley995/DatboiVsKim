@@ -69,7 +69,7 @@ public class KimAi : MonoBehaviour {
         //    animator.SetFloat("distanceFromWaypoint", distanceFromTarget);
         //}
     
-        ExplosionDamage(transform.position, SearchRadius);
+      
 
     }
 
