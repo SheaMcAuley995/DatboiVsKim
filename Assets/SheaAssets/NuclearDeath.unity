@@ -282,31 +282,12 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 830274773}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 390531f21808ced449fa827d1f7cdaec, type: 3}
+  m_Script: {fileID: 11500000, guid: e7863de02cfb41e41b606ce7e86549c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   SearchRadius: 10
-  pointA: {fileID: 0}
-  pointB: {fileID: 0}
-  navMeshAgent: {fileID: 0}
---- !u!114 &830274782
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 830274773}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05eb86777f95f4842ba120d39b67eb0c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet: {fileID: 0}
-  bulletrb: {fileID: 0}
-  bulletspeed: 0
-  closest: {fileID: 0}
-  SearchRadius: 16.26
 --- !u!1 &961663994
 GameObject:
   m_ObjectHideFlags: 0
@@ -587,7 +568,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4261569558145620, guid: 687fe23c53ea6214896e4bf913c4c6b2, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0.2
+      value: 6.23
       objectReference: {fileID: 0}
     - target: {fileID: 4261569558145620, guid: 687fe23c53ea6214896e4bf913c4c6b2, type: 2}
       propertyPath: m_LocalPosition.y

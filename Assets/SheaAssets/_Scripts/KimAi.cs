@@ -88,16 +88,4 @@ public class KimAi : MonoBehaviour {
         navMeshAgent.SetDestination(waypoints[currentTarget].position);
     }
 
-    void ExplosionDamage(Vector3 center, float radius)
-    {
-        Collider[] hitColliders = Physics.OverlapSphere(center, radius);
-        int i = 0;
-        foreach (Collider guyhit in hitColliders)
-        {
-            Debug.DrawLine(transform.position, guyhit.transform.position);
-            Gizmos.DrawSphere(transform.position, SearchRadius);
-            hitColliders[i].SendMessage("AddDamage");
-            i++;
-        }
-    }
 }
