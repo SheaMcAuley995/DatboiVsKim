@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/_WyattAssets/TimeToDie.unity
+=======
+- path: Assets/SheaAssets/_Scenes/NuclearTestingZone.unity
+>>>>>>> shea
   isLoaded: 1
   isActive: 1

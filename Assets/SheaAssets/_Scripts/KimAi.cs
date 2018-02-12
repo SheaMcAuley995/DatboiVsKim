@@ -3,16 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class NiceAss : MonoBehaviour {
+public class KimAi : MonoBehaviour {
 
 
     private GameObject player;
     private Animator animator;
     private Ray ray;
     private RaycastHit hit;
+    private RaycastHit[] targets;
     private float maxDistanceToCheck = 6.0f;
     private float currentDistance;
     private Vector3 checkDirection;
+
+    [SerializeField]
+    float SearchRadius = 0;
 
 
     public Transform pointA;
@@ -22,6 +26,8 @@ public class NiceAss : MonoBehaviour {
     private float distanceFromTarget;
     private Transform[] waypoints = null;
 
+    //public List<Transform> KnukList = new List<Transform>();
+
     private void Awake()
     {
         player = GameObject.FindWithTag("kim");
@@ -29,6 +35,9 @@ public class NiceAss : MonoBehaviour {
         pointA = GameObject.Find("p1").transform;
         pointB = GameObject.Find("p2").transform;
         navMeshAgent = gameObject.GetComponent<NavMeshAgent>();
+       
+       
+    
         waypoints = new Transform[2]
         {
             pointA,
@@ -40,25 +49,27 @@ public class NiceAss : MonoBehaviour {
 
     private void FixedUpdate()
     {
-        currentDistance = Vector3.Distance(player.transform.position, transform.position);
-        animator.SetFloat("distanceFromPlayer", currentDistance);
+        //currentDistance = Vector3.Distance(player.transform.position, transform.position);
+        //animator.SetFloat("distanceFromPlayer", currentDistance);
 
 
-        checkDirection = player.transform.position - transform.position;
-        ray = new Ray(transform.position, checkDirection);
-        if(Physics.Raycast(ray, out hit,maxDistanceToCheck))
-        {
-            if(hit.collider.gameObject == player)
-            {
-                animator.SetBool("IsEnemyVisible", true);
-            } else
-            {
-                animator.SetBool("IsEnemyVisible", false);
-            }
+        //checkDirection = player.transform.position - transform.position;
+        //ray = new Ray(transform.position, checkDirection);
+        //if(Physics.Raycast(ray, out hit,maxDistanceToCheck))
+        //{
+        //    if(hit.collider.gameObject == player)
+        //    {
+        //        animator.SetBool("IsEnemyVisible", true);
+        //    } else
+        //    {
+        //        animator.SetBool("IsEnemyVisible", false);
+        //    }
 
-            distanceFromTarget = Vector3.Distance(waypoints[currentTarget].position, transform.position);
-            animator.SetFloat("distanceFromWaypoint", distanceFromTarget);
-        }
+        //    distanceFromTarget = Vector3.Distance(waypoints[currentTarget].position, transform.position);
+        //    animator.SetFloat("distanceFromWaypoint", distanceFromTarget);
+        //}
+    
+      
 
     }
 
@@ -76,4 +87,5 @@ public class NiceAss : MonoBehaviour {
 
         navMeshAgent.SetDestination(waypoints[currentTarget].position);
     }
+
 }

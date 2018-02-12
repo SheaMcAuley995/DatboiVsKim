@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 2017.1.0f3:2.8.2.0
+=======
+2017.1.0f3:3.3.0.2
+>>>>>>> shea
 StandaloneWindows64
 C:/Program Files/Unity2017/Editor/Data/Managed/UnityEditor.dll
 C:/Program Files/Unity2017/Editor/Data/Managed/UnityEngine.dll
