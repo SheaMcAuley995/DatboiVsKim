@@ -1,0 +1,8 @@
+.vs/
+Library/
+Temp/
+
+*.sln
+*.csproj
+*.db
+*.userprefs
