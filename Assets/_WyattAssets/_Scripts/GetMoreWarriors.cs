@@ -98,7 +98,7 @@ public class GetMoreWarriors : MonoBehaviour
     }
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.black;
-        Gizmos.DrawWireSphere(transform.position, radius);
+    //    Gizmos.color = Color.black;
+      //  Gizmos.DrawWireSphere(transform.position, radius);
     }
 }

@@ -4,14 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Kim
   - Knuckles
-  - Queen
-<<<<<<< HEAD
   - Bullet
-=======
-  - Terrain
->>>>>>> e70255a167a6d82440da9effa258729f2c701012
   layers:
   - Default
   - TransparentFX
