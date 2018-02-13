@@ -4,16 +4,19 @@ using UnityEngine;
 
 public class SpawnScript : MonoBehaviour
 {
-
-
-	void Start ()
-    {
-		
-	}
+    public GameObject spawningKnuckles;
+    public GameObject[] knuckles;
+    public int AmountOfKnuckles;
+    public int spawnCap;
 
 
     void Update ()
     {
-        
+        knuckles = GameObject.FindGameObjectsWithTag("Knuckles");
+        AmountOfKnuckles = knuckles.Length;
+        if (AmountOfKnuckles < spawnCap)
+        {
+            Instantiate(spawningKnuckles, transform.position, transform.rotation);
+        }
 	}
 }

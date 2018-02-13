@@ -16,4 +16,4 @@ public class DiePest : MonoBehaviour
             Destroy(other.gameObject);
         }
     }
-}
+ }

@@ -130,9 +130,9 @@ public class testDuplicateOfGetMoreWarriors : MonoBehaviour
     }
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.black;
-        Gizmos.DrawWireSphere(transform.position, radius);
-        Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(transform.position, radius2);
+        //Gizmos.color = Color.black;
+        //Gizmos.DrawWireSphere(transform.position, radius);
+        //Gizmos.color = Color.green;
+        //Gizmos.DrawWireSphere(transform.position, radius2);
     }
 }
