@@ -97,11 +97,7 @@ public class FindTheWay : MonoBehaviour
                 if(CheckBoom.Length >= 10)
                 {
 
-<<<<<<< HEAD
-                    
-=======
                     //Debug.Log("Nice");
->>>>>>> wyatt
                 }
                 if (Vector3.Distance(transform.position, guyhit.transform.position) < closestDist)
                 {
