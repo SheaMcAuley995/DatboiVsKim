@@ -23,7 +23,7 @@ public class KimWander : MonoBehaviour
     {
         if (allowWander)
         {
-            knuckles.destination = (transform.position + returnWanderPoints());
+            knuckles.destination = (/*transform.position + */returnWanderPoints());
         }
     }
 
