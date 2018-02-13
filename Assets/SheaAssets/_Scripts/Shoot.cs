@@ -27,6 +27,7 @@ public class Shoot : MonoBehaviour {
         {
             nextFire = Time.time + fireRate;
             Rigidbody clone;
+           
             clone = Instantiate(bullet, transform.position, transform.rotation) as Rigidbody;
             clone.velocity = transform.TransformDirection(Vector3.forward * 50);
             muzzleFlash.Play();

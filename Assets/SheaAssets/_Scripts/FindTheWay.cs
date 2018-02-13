@@ -43,7 +43,7 @@ public class FindTheWay : MonoBehaviour
 
     public float SearchRadius;
     public Rigidbody bullet;
-    Transform closest = null;
+    public Transform closest = null;
 
     public GameObject explosionEffect;
     public float explosionForce;
@@ -97,7 +97,7 @@ public class FindTheWay : MonoBehaviour
                 if(CheckBoom.Length >= 10)
                 {
 
-                    Debug.Log("Nice");
+                    
                 }
                 if (Vector3.Distance(transform.position, guyhit.transform.position) < closestDist)
                 {
@@ -120,15 +120,15 @@ public class FindTheWay : MonoBehaviour
         
     }
 
-    void CheckExplosion()
-    {
-        Collider[] CheckBoom = Physics.OverlapSphere();
-        if (CheckBoom.Length >= 10)
-        {
+    //void CheckExplosion()
+    //{
+    //    Collider[] CheckBoom = Physics.OverlapSphere();
+    //    if (CheckBoom.Length >= 10)
+    //    {
 
-            Debug.Log("Nice");
-        }
-    }
+    //        Debug.Log("Nice");
+    //    }
+    //}
 
     void explosion()
     {
