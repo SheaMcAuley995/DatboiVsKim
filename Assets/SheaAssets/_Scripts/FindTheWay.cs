@@ -39,13 +39,15 @@ using UnityEngine;
 
 public class FindTheWay : MonoBehaviour
 {
-
+    Shoot myGun;
 
     public float SearchRadius;
     public Rigidbody bullet;
     Transform closest = null;
-  
 
+    public GameObject explosionEffect;
+    public float explosionForce;
+    public float explosionRadius;
 
     Vector3 targetDir;
 
@@ -53,7 +55,7 @@ public class FindTheWay : MonoBehaviour
 
     void Start()
     {
-
+        myGun = GetComponent<Shoot>();
     }
 
     // Update is called once per frame
@@ -61,12 +63,16 @@ public class FindTheWay : MonoBehaviour
     {
         float step = speed * Time.deltaTime;
         ExplosionDamage(transform.position, SearchRadius);
-        targetDir = closest.transform.position - transform.position;
+
+        if(closest != null)
+        { targetDir = closest.transform.position - transform.position; }
+        
         Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, step, 0.0f);
         newDir.y = 0;
         transform.rotation = Quaternion.LookRotation(newDir);
         Debug.DrawLine(transform.position, closest.transform.position);
-        shootKnuckles();
+        myGun.Shooting();
+        //shootKnuckles();
     }
 
     private void OnDrawGizmos()
@@ -77,13 +83,22 @@ public class FindTheWay : MonoBehaviour
 
     void ExplosionDamage(Vector3 center, float radius)
     {
+
         Collider[] hitColliders = Physics.OverlapSphere(center, radius);
+        
         float closestDist = 9999;
         closest = null;
         foreach (Collider guyhit in hitColliders)
         {
+           
             if (guyhit.tag == "Knuckles")
             {
+                Collider[] CheckBoom = Physics.OverlapSphere(guyhit.transform.position, radius);
+                if(CheckBoom.Length >= 10)
+                {
+
+                    Debug.Log("Nice");
+                }
                 if (Vector3.Distance(transform.position, guyhit.transform.position) < closestDist)
                 {
                     closest = guyhit.transform;
@@ -101,5 +116,44 @@ public class FindTheWay : MonoBehaviour
         
         clone.velocity = transform.TransformDirection(Vector3.forward * 10);
 
+        
+        
+    }
+
+    void CheckExplosion()
+    {
+        Collider[] CheckBoom = Physics.OverlapSphere();
+        if (CheckBoom.Length >= 10)
+        {
+
+            Debug.Log("Nice");
+        }
+    }
+
+    void explosion()
+    {
+        Instantiate(explosionEffect, transform.position, transform.rotation);
+
+        Collider[] colliders = Physics.OverlapSphere(transform.position, 15);
+
+        foreach(Collider nearbyObject in colliders)
+        {
+            Rigidbody rb = nearbyObject.GetComponent<Rigidbody>();
+            if (rb != null)
+            {
+                rb.AddExplosionForce(explosionForce, transform.position, explosionRadius);
+            }
+        }
+
+        Destroy(gameObject);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.collider.tag == "Knuckles")
+        {
+            Destroy(gameObject);
+        }
+        
     }
 }
