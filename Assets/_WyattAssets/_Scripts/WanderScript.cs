@@ -35,7 +35,7 @@ public class WanderScript : MonoBehaviour
         target += transform.position;
         target += transform.forward * distance;
         Vector3 dir = (target - transform.position).normalized;
-        Vector3 desiredVel = dir * speed;
+       // Vector3 desiredVel = dir * speed;
         return target;
     }
 }

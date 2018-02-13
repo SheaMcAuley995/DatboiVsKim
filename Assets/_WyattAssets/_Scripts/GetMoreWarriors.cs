@@ -30,7 +30,7 @@ public class GetMoreWarriors : MonoBehaviour
         foreach(Collider guyInHood in hood)
         {
             var Flocker = guyInHood.GetComponent<GetMoreWarriors>();
-            if (Flocker != null && guyInHood.tag == ("Queen"))
+            if (Flocker != null)
             {
                 hoodSize++;
                 NavMeshAgent otherNav = guyInHood.GetComponent<NavMeshAgent>();

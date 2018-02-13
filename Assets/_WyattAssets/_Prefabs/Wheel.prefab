@@ -23,12 +23,14 @@ GameObject:
   - component: {fileID: 135076456576040706}
   - component: {fileID: 23583844203569536}
   - component: {fileID: 54230000940922458}
+  - component: {fileID: 82475124462577392}
   - component: {fileID: 195557351231483936}
   - component: {fileID: 114730220715705004}
   - component: {fileID: 114028541925088662}
   - component: {fileID: 114045016336569814}
-  - component: {fileID: 82475124462577392}
   - component: {fileID: 114381843435012988}
+  - component: {fileID: 114444371747589362}
+  - component: {fileID: 114545397727532304}
   m_Layer: 0
   m_Name: Wheel
   m_TagString: Knuckles
@@ -319,8 +321,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0106619b0025ae40be4eca80bc6ef32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 100
   radius: 10
+--- !u!114 &114444371747589362
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1214183633383106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd91081634542c041973b56043319a81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114545397727532304
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1214183633383106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d457f6532dd22f249856b696a3795cac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  searchRad: 20
 --- !u!114 &114730220715705004
 MonoBehaviour:
   m_ObjectHideFlags: 1
