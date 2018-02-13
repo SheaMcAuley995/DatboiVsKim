@@ -68,7 +68,11 @@ public class FindTheWay : MonoBehaviour
         { targetDir = closest.transform.position - transform.position; }
         
         Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, step, 0.0f);
-        newDir.y = 0;
+        
+
+        
+
+        //newDir.y = 0;
         transform.rotation = Quaternion.LookRotation(newDir);
         Debug.DrawLine(transform.position, closest.transform.position);
         myGun.Shooting();
