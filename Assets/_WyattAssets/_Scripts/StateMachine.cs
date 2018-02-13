@@ -2,11 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+public enum boiState
+{
+    wander,
+    runAwau,
+    Attack
+}
+
+
 public class StateMachine : MonoBehaviour
 {
     FollowKimScript follow;
     WanderScript wander;
     GetMoreWarriors flock;
+    testDuplicateOfGetMoreWarriors flock2;
 
     public new AudioSource audio;
     public AudioClip[] Chasingclips;
@@ -15,8 +25,7 @@ public class StateMachine : MonoBehaviour
     public GameObject knuckles;
 
     public float distance;
-
-    public bool uh;
+    public boiState state;
 
     void Start ()
     { 
@@ -25,39 +34,50 @@ public class StateMachine : MonoBehaviour
         follow = GetComponent<FollowKimScript>();
         wander = GetComponent<WanderScript>();
         flock = GetComponent<GetMoreWarriors>();
+        flock2 = GetComponent<testDuplicateOfGetMoreWarriors>();
 	}
 	
 
 	void Update () 
     {
         float distancefrom = Vector3.Distance(knuckles.transform.position, target.transform.position);
-        flock.DoFlock();
-        if (distancefrom <= distance)
+        flock2.DoFlock();
+
+
+        switch (state)
         {
-            uh = true;
+            case boiState.wander:
+                if (audio.isPlaying == false)
+                {
+                    audio.PlayOneShot(Roamclips[Random.Range(0, 4)]);
+                }
+                wander.DoWander();
+                break;
+            case boiState.Attack:
+                if (audio.isPlaying == false)
+                {
+                    audio.PlayOneShot(Chasingclips[Random.Range(0, 4)]);
+                }
+                follow.DoFollow();
+                break;
+            case boiState.runAwau:
+                flock2.DoRun();
+                break;    
         }
-        else
+
+
+
+
+        if(state != boiState.runAwau)
         {
-            uh = false;
-
-        }
-
-        if (uh)
-        {
-
-            if (audio.isPlaying == false)
+            if (distancefrom <= distance)
             {
-                audio.PlayOneShot(Chasingclips[Random.Range(0,4)]);
+                state = boiState.Attack;
             }
-            follow.DoFollow();
-        }
-        else
-        {
-            if (audio.isPlaying == false)
+            else
             {
-                audio.PlayOneShot(Roamclips[Random.Range(0, 4)]);
+                state = boiState.wander;
             }
-            wander.DoWander();   
         }
 	}
 }

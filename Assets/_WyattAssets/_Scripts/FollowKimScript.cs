@@ -10,7 +10,6 @@ public class FollowKimScript : MonoBehaviour
     public float speed;
     public float distance;
     public GameObject target;
-    public Rigidbody rb;
 
 
     void Start ()

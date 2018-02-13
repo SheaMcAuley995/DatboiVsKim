@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class DiePest : MonoBehaviour
 {	
+    void Start()
+    {
 
+    }
     void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Bullet")

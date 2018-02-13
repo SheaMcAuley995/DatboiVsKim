@@ -25,12 +25,11 @@ GameObject:
   - component: {fileID: 54230000940922458}
   - component: {fileID: 82475124462577392}
   - component: {fileID: 195557351231483936}
+  - component: {fileID: 114045016336569814}
+  - component: {fileID: 114844634371844470}
   - component: {fileID: 114730220715705004}
   - component: {fileID: 114028541925088662}
-  - component: {fileID: 114045016336569814}
-  - component: {fileID: 114381843435012988}
   - component: {fileID: 114444371747589362}
-  - component: {fileID: 114545397727532304}
   m_Layer: 0
   m_Name: Wheel
   m_TagString: Knuckles
@@ -63,7 +62,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1214183633383106}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.8, y: 0.6, z: 17.4}
+  m_LocalPosition: {x: -9.4, y: 0.6, z: 9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4879940132599356}
@@ -309,20 +308,7 @@ MonoBehaviour:
   target: {fileID: 1091530198920408, guid: ebfdc0763cd5b0a44981e9ed73d1b8d0, type: 2}
   knuckles: {fileID: 1214183633383106}
   distance: 10
-  uh: 0
---- !u!114 &114381843435012988
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1214183633383106}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0106619b0025ae40be4eca80bc6ef32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 100
-  radius: 10
+  state: 0
 --- !u!114 &114444371747589362
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -334,18 +320,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd91081634542c041973b56043319a81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114545397727532304
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1214183633383106}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d457f6532dd22f249856b696a3795cac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  searchRad: 20
 --- !u!114 &114730220715705004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -360,7 +334,23 @@ MonoBehaviour:
   speed: 10
   distance: 100
   target: {fileID: 1091530198920408, guid: ebfdc0763cd5b0a44981e9ed73d1b8d0, type: 2}
-  rb: {fileID: 54230000940922458}
+--- !u!114 &114844634371844470
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1214183633383106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a50b56eb76e32b40822c9a08a5dec20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kim: {fileID: 0}
+  speed: 100
+  radius: 10
+  radius2: 15
+  isKim: 0
+  showHoodsize: 0
 --- !u!135 &135076456576040706
 SphereCollider:
   m_ObjectHideFlags: 1
