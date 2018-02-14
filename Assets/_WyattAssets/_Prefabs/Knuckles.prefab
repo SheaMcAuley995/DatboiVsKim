@@ -209,6 +209,7 @@ GameObject:
   - component: {fileID: 114372028632754642}
   - component: {fileID: 82306659048746708}
   - component: {fileID: 114150842754583254}
+  - component: {fileID: 114217346229660832}
   m_Layer: 0
   m_Name: Knuckles
   m_TagString: Knuckles
@@ -1563,6 +1564,17 @@ MonoBehaviour:
   radius2: 15
   isKim: 0
   showHoodsize: 0
+--- !u!114 &114217346229660832
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1508917727514214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd91081634542c041973b56043319a81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114291328496022384
 MonoBehaviour:
   m_ObjectHideFlags: 1

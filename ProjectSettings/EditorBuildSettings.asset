@@ -4,4 +4,10 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/_WyattAssets/Menu.unity
+    guid: 7e49ed742c9142e47a86d34ad98f8a08
+  - enabled: 1
+    path: Assets/_WyattAssets/BoomZone (1).unity
+    guid: 01992dc5a019d904a954d4de335be7c9

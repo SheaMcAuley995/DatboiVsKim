@@ -36,48 +36,64 @@ public class StateMachine : MonoBehaviour
         flock = GetComponent<GetMoreWarriors>();
         flock2 = GetComponent<testDuplicateOfGetMoreWarriors>();
 	}
-	
 
-	void Update () 
+
+    void Update()
     {
-        float distancefrom = Vector3.Distance(knuckles.transform.position, target.transform.position);
-        flock2.DoFlock();
-
-
-        switch (state)
+        if (target != null)
         {
-            case boiState.wander:
-                if (audio.isPlaying == false)
-                {
-                    audio.PlayOneShot(Roamclips[Random.Range(0, 4)]);
-                }
-                wander.DoWander();
-                break;
-            case boiState.Attack:
-                if (audio.isPlaying == false)
-                {
-                    audio.PlayOneShot(Chasingclips[Random.Range(0, 4)]);
-                }
-                follow.DoFollow();
-                break;
-            case boiState.runAwau:
-                flock2.DoRun();
-                break;    
-        }
+
+            float distancefrom = Vector3.Distance(knuckles.transform.position, target.transform.position);
 
 
 
+            flock2.DoFlock();
 
-        if(state != boiState.runAwau)
-        {
-            if (distancefrom <= distance)
+
+            switch (state)
             {
-                state = boiState.Attack;
+                case boiState.wander:
+
+                    if (audio.isPlaying == false)
+                    {
+                        audio.PlayOneShot(Roamclips[Random.Range(0, 4)]);
+                    }
+                    if (target == null)
+                    {
+                        audio.Stop();
+                    }
+                    wander.DoWander();
+                    break;
+                case boiState.Attack:
+                    if (audio.isPlaying == false)
+                    {
+                        audio.PlayOneShot(Chasingclips[Random.Range(0, 4)]);
+                    }
+                    if (target == null)
+                    {
+                        audio.Stop();
+                    }
+                    follow.DoFollow();
+                    break;
+                case boiState.runAwau:
+                    flock2.DoRun();
+                    break;
             }
-            else
+
+
+
+
+            if (state != boiState.runAwau)
             {
-                state = boiState.wander;
+                if (distancefrom <= distance)
+                {
+                    state = boiState.Attack;
+                }
+                else
+                {
+                    state = boiState.wander;
+                }
             }
         }
-	}
+    }
 }

@@ -12,6 +12,7 @@ public class SpawnScript : MonoBehaviour
 
     void Update ()
     {
+
         knuckles = GameObject.FindGameObjectsWithTag("Knuckles");
         AmountOfKnuckles = knuckles.Length;
         if (AmountOfKnuckles < spawnCap)

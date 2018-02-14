@@ -30,8 +30,8 @@ public class Shoot : MonoBehaviour {
            
             clone = Instantiate(bullet, transform.position, transform.rotation) as Rigidbody;
             clone.velocity = transform.TransformDirection(Vector3.forward * 50);
-            muzzleFlash.Play();
-            Vector3 rayOrigin = gunEnd.position;
+            //muzzleFlash.Play();
+            //Vector3 rayOrigin = gunEnd.position;
             
         }
         

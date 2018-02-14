@@ -74,7 +74,7 @@ public class FindTheWay : MonoBehaviour
 
         //newDir.y = 0;
         transform.rotation = Quaternion.LookRotation(newDir);
-        Debug.DrawLine(transform.position, closest.transform.position);
+      //  Debug.DrawLine(transform.position, closest.transform.position);
         myGun.Shooting();
         //shootKnuckles();
     }
