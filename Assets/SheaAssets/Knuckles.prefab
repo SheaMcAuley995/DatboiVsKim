@@ -462,8 +462,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1508917727514214}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 401.81, y: 83, z: 269.18}
+  m_LocalRotation: {x: -2.5568434e-13, y: -0.012291132, z: 2.0756839e-11, w: 0.99992454}
+  m_LocalPosition: {x: 409.08633, y: 82.19905, z: 278.1746}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4380812435998614}
@@ -1545,8 +1545,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   distance: 100
-  target: {fileID: 1091530198920408, guid: ebfdc0763cd5b0a44981e9ed73d1b8d0, type: 2}
-  rb: {fileID: 54494161517582402}
+  target: {fileID: 0}
 --- !u!114 &114291328496022384
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1585,10 +1584,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: a393b8f9d3cd9174099ea978d386d085, type: 3}
   - {fileID: 8300000, guid: 237fc624ad9f4cd42bd41543e2658ac3, type: 3}
   - {fileID: 8300000, guid: 9c1bb1e0a04afd9428f1b3ddeee9cc31, type: 3}
-  target: {fileID: 1091530198920408, guid: ebfdc0763cd5b0a44981e9ed73d1b8d0, type: 2}
+  target: {fileID: 0}
   knuckles: {fileID: 1508917727514214}
   distance: 10
-  uh: 0
+  state: 0
 --- !u!114 &114613700249309524
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1600,8 +1599,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0106619b0025ae40be4eca80bc6ef32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  kim: {fileID: 0}
   speed: 10
   radius: 10
+  showHoodsize: 0
 --- !u!135 &135120008142646158
 SphereCollider:
   m_ObjectHideFlags: 1

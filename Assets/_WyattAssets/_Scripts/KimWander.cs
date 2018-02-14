@@ -12,25 +12,12 @@ public class KimWander : MonoBehaviour
     public Vector3 target;
     public Rigidbody rb;
 
-
-
-    bool allowWander;
-    bool allowFlee;
-    bool allowGun;
-    bool allowGernade;
-
     void Start()
     {
         knuckles = GetComponent<NavMeshAgent>();
     }
-    public void Update()
-    {
-        if (allowWander)
-        {
-            knuckles.destination = (returnWanderPoints());
-        }
-    }
-
+ 
+    
 
     public Vector3 returnWanderPoints()
     {

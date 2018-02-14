@@ -1,38 +1,4 @@
-﻿//using System.Collections;
-//using System.Collections.Generic;
-//using UnityEngine;
-
-//public class FindTheWay : MonoBehaviour {
-
-
-//    public float SearchRadius;
-//    public GameObject bullet;
-//    Transform closest = null;
-
-   
-
-//	void Start () {
-		
-//	}
-	
-//	// Update is called once per frame
-//	void Update () {
-//        ExplosionDamage(transform.position, SearchRadius);
-//        Debug.DrawLine(transform.position, closest.transform.position);
-//    }
-
-//    private void OnDrawGizmos()
-//    {
-//        Gizmos.color = Color.blue;
-//        Gizmos.DrawWireSphere(transform.position, SearchRadius);
-//    }
-
-
-
-//}
-
-
-
+﻿
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -96,7 +62,7 @@ public class FindTheWay : MonoBehaviour
         clone = Instantiate(bullet, transform.position , transform.rotation) as Rigidbody;
         
         clone.velocity = transform.TransformDirection(Vector3.forward * 10);
-
+        
         
         
     }

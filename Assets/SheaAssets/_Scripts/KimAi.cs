@@ -21,14 +21,20 @@ public class KimAi : MonoBehaviour {
     [HideInInspector]
     public NavMeshAgent agent;
 
+    Transform closest = null;
+    public Vector3 targetDir;
+    public float speed;
+    
+
     Shoot shoot;
-    FindTheWay findTheWay;
+    //FindTheWay findTheWay;
     KimWander kimWander;
 
 
     public float SearchRadius;
-
-
+    public float knowlegeSphere;
+    private int howManyNucks;
+   
 
     KimState state;
     //public GameObject walkTarget;
@@ -38,7 +44,7 @@ public class KimAi : MonoBehaviour {
     {
         shoot = GetComponent<Shoot>();
         kimWander = GetComponent<KimWander>();
-        findTheWay = GetComponent<FindTheWay>();
+      //  findTheWay = GetComponent<FindTheWay>();
         agent = GetComponent<NavMeshAgent>();
         behaviors = new Stack<KimWander>();
 
@@ -47,16 +53,21 @@ public class KimAi : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+        
+
+
+        state = KimState.Attack;
         switch (state)
         {
+            
             case KimState.Attack:
-                float step = findTheWay.speed * Time.deltaTime;
-                Transform closest = findTheWay.findTarget(transform.position, SearchRadius);
+                float step = speed * Time.deltaTime;
+                //Transform closest = findTarget(transform.position, SearchRadius);
 
                 if (closest != null)
-                { findTheWay.targetDir = findTheWay.closest.transform.position - transform.position; }
+                { targetDir = closest.transform.position - transform.position; }
 
-                Vector3 newDir = Vector3.RotateTowards(transform.forward, findTheWay.targetDir, step, 0.0f);
+                Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, step, 0.0f);
                 transform.rotation = Quaternion.LookRotation(newDir);
                 shoot.Shooting();
 
@@ -64,17 +75,49 @@ public class KimAi : MonoBehaviour {
 
 
             case KimState.wander:
-
+                //Debug.Log("Wandering");
                 agent.destination = (kimWander.returnWanderPoints());
                 break;
 
         }
 
-        
+
+        findKnuckles(transform.position, SearchRadius);
+
+
 
 
     }
 
+    //void attainKnowlege(Vector3 center, float radius)
+    //{
+    //    Collider[] nearMe = Physics.OverlapSphere(center, radius);
+        
+    //    if
+    //}
+
+    void findKnuckles(Vector3 center, float radius)
+    {
+    Collider[] hitColliders = Physics.OverlapSphere(center, radius);
+
+    float closestDist = 9999;
+        
+        foreach (Collider guyhit in hitColliders)
+        {
+           
+            if (guyhit.tag == "Knuckles")
+            {
+                state = KimState.Attack;
+                if (Vector3.Distance(transform.position, guyhit.transform.position) < closestDist)
+                {
+                    closest = guyhit.transform;
+                    closestDist = Vector3.Distance(transform.position, closest.transform.position);
+                    
+                }
+            }
+        }
+        
+    }
 
     private void OnDrawGizmos()
     {
