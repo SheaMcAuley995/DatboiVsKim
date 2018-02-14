@@ -1,38 +1,4 @@
-﻿//using System.Collections;
-//using System.Collections.Generic;
-//using UnityEngine;
-
-//public class FindTheWay : MonoBehaviour {
-
-
-//    public float SearchRadius;
-//    public GameObject bullet;
-//    Transform closest = null;
-
-   
-
-//	void Start () {
-		
-//	}
-	
-//	// Update is called once per frame
-//	void Update () {
-//        ExplosionDamage(transform.position, SearchRadius);
-//        Debug.DrawLine(transform.position, closest.transform.position);
-//    }
-
-//    private void OnDrawGizmos()
-//    {
-//        Gizmos.color = Color.blue;
-//        Gizmos.DrawWireSphere(transform.position, SearchRadius);
-//    }
-
-
-
-//}
-
-
-
+﻿
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -49,7 +15,7 @@ public class FindTheWay : MonoBehaviour
     public float explosionForce;
     public float explosionRadius;
 
-    Vector3 targetDir;
+    public Vector3 targetDir;
 
     public float speed;
 
@@ -59,6 +25,7 @@ public class FindTheWay : MonoBehaviour
     }
 
     // Update is called once per frame
+<<<<<<< HEAD
     void Update()
     {
         float step = speed * Time.deltaTime;
@@ -78,6 +45,8 @@ public class FindTheWay : MonoBehaviour
         myGun.Shooting();
         //shootKnuckles();
     }
+=======
+>>>>>>> 47502c7732c82a352062e0a5ccaa4378ffbb523e
 
     private void OnDrawGizmos()
     {
@@ -85,32 +54,28 @@ public class FindTheWay : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, SearchRadius);
     }
 
-    void ExplosionDamage(Vector3 center, float radius)
+    public Transform findTarget(Vector3 center, float radius)
     {
-
+        Transform retval = null;
         Collider[] hitColliders = Physics.OverlapSphere(center, radius);
         
         float closestDist = 9999;
-        closest = null;
+        
         foreach (Collider guyhit in hitColliders)
         {
            
             if (guyhit.tag == "Knuckles")
             {
-                Collider[] CheckBoom = Physics.OverlapSphere(guyhit.transform.position, radius);
-                if(CheckBoom.Length >= 10)
-                {
 
-                    //Debug.Log("Nice");
-                }
                 if (Vector3.Distance(transform.position, guyhit.transform.position) < closestDist)
                 {
-                    closest = guyhit.transform;
+                    retval = guyhit.transform;
                     closestDist = Vector3.Distance(transform.position, closest.transform.position);
                     
                 }
             }
         }
+        return retval;
     }
     void shootKnuckles()
     {
@@ -119,7 +84,7 @@ public class FindTheWay : MonoBehaviour
         clone = Instantiate(bullet, transform.position , transform.rotation) as Rigidbody;
         
         clone.velocity = transform.TransformDirection(Vector3.forward * 10);
-
+        
         
         
     }

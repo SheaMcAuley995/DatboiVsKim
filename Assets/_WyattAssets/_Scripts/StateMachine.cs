@@ -95,5 +95,18 @@ public class StateMachine : MonoBehaviour
                 }
             }
         }
+<<<<<<< HEAD
+=======
+        
+        
+	}
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Bullet")
+        {
+            Destroy(gameObject);
+        }
+>>>>>>> 47502c7732c82a352062e0a5ccaa4378ffbb523e
     }
 }
