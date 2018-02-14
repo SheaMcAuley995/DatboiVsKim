@@ -3,89 +3,82 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+
+
+public enum KimState
+{
+    wander,
+    runAway,
+    Attack
+}
+
+
 public class KimAi : MonoBehaviour {
 
 
-    private GameObject player;
-    private Animator animator;
-    private Ray ray;
-    private RaycastHit hit;
-    private RaycastHit[] targets;
-    private float maxDistanceToCheck = 6.0f;
-    private float currentDistance;
-    private Vector3 checkDirection;
+    [HideInInspector]
+    public Stack<KimWander> behaviors;
+    [HideInInspector]
+    public NavMeshAgent agent;
 
-    [SerializeField]
-    float SearchRadius = 0;
+    Shoot shoot;
+    FindTheWay findTheWay;
+    KimWander kimWander;
 
 
-    public Transform pointA;
-    public Transform pointB;
-    public NavMeshAgent navMeshAgent;
-    private int currentTarget;
-    private float distanceFromTarget;
-    private Transform[] waypoints = null;
+    public float SearchRadius;
 
-    //public List<Transform> KnukList = new List<Transform>();
 
-    private void Awake()
+
+    KimState state;
+    //public GameObject walkTarget;
+    //WalkTowardsBehaviour walkTowards;
+    // Use this for initialization
+    void Start()
     {
-        player = GameObject.FindWithTag("kim");
-        animator = gameObject.GetComponent<Animator>();
-        pointA = GameObject.Find("p1").transform;
-        pointB = GameObject.Find("p2").transform;
-        navMeshAgent = gameObject.GetComponent<NavMeshAgent>();
-       
-       
-    
-        waypoints = new Transform[2]
-        {
-            pointA,
-            pointB
-        };
-        currentTarget = 0;
-        navMeshAgent.SetDestination(waypoints[currentTarget].position);
-    }
-
-    private void FixedUpdate()
-    {
-        //currentDistance = Vector3.Distance(player.transform.position, transform.position);
-        //animator.SetFloat("distanceFromPlayer", currentDistance);
-
-
-        //checkDirection = player.transform.position - transform.position;
-        //ray = new Ray(transform.position, checkDirection);
-        //if(Physics.Raycast(ray, out hit,maxDistanceToCheck))
-        //{
-        //    if(hit.collider.gameObject == player)
-        //    {
-        //        animator.SetBool("IsEnemyVisible", true);
-        //    } else
-        //    {
-        //        animator.SetBool("IsEnemyVisible", false);
-        //    }
-
-        //    distanceFromTarget = Vector3.Distance(waypoints[currentTarget].position, transform.position);
-        //    animator.SetFloat("distanceFromWaypoint", distanceFromTarget);
-        //}
-    
-      
+        shoot = GetComponent<Shoot>();
+        kimWander = GetComponent<KimWander>();
+        findTheWay = GetComponent<FindTheWay>();
+        agent = GetComponent<NavMeshAgent>();
+        behaviors = new Stack<KimWander>();
 
     }
 
-    public void SetNextPoint()
+    // Update is called once per frame
+    void Update()
     {
-        switch (currentTarget)
+        switch (state)
         {
-            case 0:
-                currentTarget = 1;
+            case KimState.Attack:
+                float step = findTheWay.speed * Time.deltaTime;
+                Transform closest = findTheWay.findTarget(transform.position, SearchRadius);
+
+                if (closest != null)
+                { findTheWay.targetDir = findTheWay.closest.transform.position - transform.position; }
+
+                Vector3 newDir = Vector3.RotateTowards(transform.forward, findTheWay.targetDir, step, 0.0f);
+                transform.rotation = Quaternion.LookRotation(newDir);
+                shoot.Shooting();
+
                 break;
-            case 1:
-                currentTarget = 0;
+
+
+            case KimState.wander:
+
+                agent.destination = (kimWander.returnWanderPoints());
                 break;
+
         }
 
-        navMeshAgent.SetDestination(waypoints[currentTarget].position);
+        
+
+
     }
 
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(transform.position, SearchRadius);
+    }
 }

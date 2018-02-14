@@ -17,8 +17,8 @@ public class Shoot : MonoBehaviour {
     public Rigidbody bullet;
     public Transform gunEnd;
     public ParticleSystem muzzleFlash;
-    
 
+    public float SearchRadius;
 
     public void Shooting()
     {
@@ -28,7 +28,7 @@ public class Shoot : MonoBehaviour {
             nextFire = Time.time + fireRate;
             Rigidbody clone;
            
-            clone = Instantiate(bullet, transform.position, transform.rotation) as Rigidbody;
+            clone = Instantiate(bullet, gunEnd.position, transform.rotation) as Rigidbody;
             clone.velocity = transform.TransformDirection(Vector3.forward * 50);
             muzzleFlash.Play();
             Vector3 rayOrigin = gunEnd.position;
@@ -42,5 +42,8 @@ public class Shoot : MonoBehaviour {
         GameObject spawnedDecal = GameObject.Instantiate(prefab, hit.point, Quaternion.LookRotation(hit.normal));
         spawnedDecal.transform.SetParent(hit.collider.transform);
     }
+
+
+
 }
 

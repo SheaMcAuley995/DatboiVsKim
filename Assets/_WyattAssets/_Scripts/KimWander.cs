@@ -4,16 +4,20 @@ using UnityEngine;
 using UnityEngine.AI;
 public class KimWander : MonoBehaviour
 {
-
     NavMeshAgent knuckles;
-
     public float speed;
     public float radius;
     public float jitter;
     public float distance;
     public Vector3 target;
     public Rigidbody rb;
-    public bool allowWander;
+
+
+
+    bool allowWander;
+    bool allowFlee;
+    bool allowGun;
+    bool allowGernade;
 
     void Start()
     {
@@ -23,7 +27,7 @@ public class KimWander : MonoBehaviour
     {
         if (allowWander)
         {
-            knuckles.destination = (/*transform.position + */returnWanderPoints());
+            knuckles.destination = (returnWanderPoints());
         }
     }
 

@@ -49,7 +49,7 @@ public class FindTheWay : MonoBehaviour
     public float explosionForce;
     public float explosionRadius;
 
-    Vector3 targetDir;
+    public Vector3 targetDir;
 
     public float speed;
 
@@ -59,25 +59,6 @@ public class FindTheWay : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        float step = speed * Time.deltaTime;
-        ExplosionDamage(transform.position, SearchRadius);
-
-        if(closest != null)
-        { targetDir = closest.transform.position - transform.position; }
-        
-        Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, step, 0.0f);
-        
-
-        
-
-        //newDir.y = 0;
-        transform.rotation = Quaternion.LookRotation(newDir);
-        Debug.DrawLine(transform.position, closest.transform.position);
-        myGun.Shooting();
-        //shootKnuckles();
-    }
 
     private void OnDrawGizmos()
     {
@@ -85,32 +66,28 @@ public class FindTheWay : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, SearchRadius);
     }
 
-    void ExplosionDamage(Vector3 center, float radius)
+    public Transform findTarget(Vector3 center, float radius)
     {
-
+        Transform retval = null;
         Collider[] hitColliders = Physics.OverlapSphere(center, radius);
         
         float closestDist = 9999;
-        closest = null;
+        
         foreach (Collider guyhit in hitColliders)
         {
            
             if (guyhit.tag == "Knuckles")
             {
-                Collider[] CheckBoom = Physics.OverlapSphere(guyhit.transform.position, radius);
-                if(CheckBoom.Length >= 10)
-                {
 
-                    //Debug.Log("Nice");
-                }
                 if (Vector3.Distance(transform.position, guyhit.transform.position) < closestDist)
                 {
-                    closest = guyhit.transform;
+                    retval = guyhit.transform;
                     closestDist = Vector3.Distance(transform.position, closest.transform.position);
                     
                 }
             }
         }
+        return retval;
     }
     void shootKnuckles()
     {
