@@ -107,7 +107,7 @@ NavMeshSettings:
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 1
-  m_NavMeshData: {fileID: 23800000, guid: ce6213ceba0e06e4db15c32c20386968, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: fb310af6177c24c42b0619506e9acbf3, type: 2}
 --- !u!1001 &36727460
 Prefab:
   m_ObjectHideFlags: 0
@@ -710,12 +710,20 @@ Prefab:
       propertyPath: dontClipTag
       value: Kim
       objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: baec086904791744185aaa07a6cf55c2, type: 2}
+      propertyPath: m_Cam
+      value: 
+      objectReference: {fileID: 685271463}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: baec086904791744185aaa07a6cf55c2, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &685271462 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100002, guid: baec086904791744185aaa07a6cf55c2, type: 2}
+  m_PrefabInternal: {fileID: 674678426}
+--- !u!4 &685271463 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 400002, guid: baec086904791744185aaa07a6cf55c2, type: 2}
   m_PrefabInternal: {fileID: 674678426}
 --- !u!114 &685271468
 MonoBehaviour:
@@ -973,58 +981,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: df2e68c5bb1b900459c892f0a620b6d1, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1329024585 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 100004, guid: baec086904791744185aaa07a6cf55c2, type: 2}
-  m_PrefabInternal: {fileID: 674678426}
---- !u!114 &1329024586
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1329024585}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  profile: {fileID: 11400000, guid: b67b01254e1cdca4fb5dcbdb82e49e31, type: 2}
---- !u!20 &1329024590
-Camera:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1329024585}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
-  m_NormalizedViewPortRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 53.6
-  orthographic: 0
-  orthographic size: 5
-  m_Depth: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingPath: 3
-  m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 7
-  m_TargetEye: 3
-  m_HDR: 1
-  m_AllowMSAA: 0
-  m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
-  m_StereoConvergence: 10
-  m_StereoSeparation: 0.022
-  m_StereoMirrorMode: 0
 --- !u!1 &1344227103
 GameObject:
   m_ObjectHideFlags: 0
