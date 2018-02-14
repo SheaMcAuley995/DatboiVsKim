@@ -203,7 +203,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &22852557
 Transform:
@@ -745,7 +745,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &377872611
 Transform:
@@ -2615,7 +2615,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1382188990
 Transform:
@@ -2980,7 +2980,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1528203910
 Transform:
@@ -3092,6 +3092,23 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 687fe23c53ea6214896e4bf913c4c6b2, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1611771078 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1781404474163346, guid: 1a2102c01d93d3e4a90e7d2786582ebf,
+    type: 2}
+  m_PrefabInternal: {fileID: 1958174284}
+--- !u!65 &1611771085
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1611771078}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.06, y: 2.76, z: 1.64}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1632840742
 GameObject:
   m_ObjectHideFlags: 0
@@ -3511,7 +3528,7 @@ SpringJoint:
   m_ConnectedBody: {fileID: 1756135611}
   m_Anchor: {x: 0, y: -0.91, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0.09861349, z: 0.027204365}
+  m_ConnectedAnchor: {x: 0, y: 0.0986135, z: 0.027204365}
   serializedVersion: 2
   m_Spring: 300000
   m_Damper: 20
@@ -3670,7 +3687,22 @@ Prefab:
     - target: {fileID: 114596732825089692, guid: 1a2102c01d93d3e4a90e7d2786582ebf,
         type: 2}
       propertyPath: speed
-      value: 49.65
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 114276315689903406, guid: 1a2102c01d93d3e4a90e7d2786582ebf,
+        type: 2}
+      propertyPath: SearchRadius
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 195540450974306428, guid: 1a2102c01d93d3e4a90e7d2786582ebf,
+        type: 2}
+      propertyPath: m_Radius
+      value: 1.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 195540450974306428, guid: 1a2102c01d93d3e4a90e7d2786582ebf,
+        type: 2}
+      propertyPath: m_Height
+      value: 2.72
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114694499597545600, guid: 1a2102c01d93d3e4a90e7d2786582ebf, type: 2}

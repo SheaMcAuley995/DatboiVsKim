@@ -56,7 +56,7 @@ public class KimAi : MonoBehaviour {
         
 
 
-        state = KimState.Attack;
+        //state = KimState.Attack;
         switch (state)
         {
             
@@ -66,8 +66,9 @@ public class KimAi : MonoBehaviour {
 
                 if (closest != null)
                 { targetDir = closest.transform.position - transform.position; }
-
+                
                 Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, step, 0.0f);
+                transform.position -= (transform.forward * Time.deltaTime) * 3;
                 transform.rotation = Quaternion.LookRotation(newDir);
                 shoot.Shooting();
 
@@ -85,21 +86,37 @@ public class KimAi : MonoBehaviour {
         findKnuckles(transform.position, SearchRadius);
 
 
-
+        if (closest != null)
+        {
+            state = KimState.Attack;
+            
+        }
+        else
+        {
+            state = KimState.wander;
+        }
 
     }
 
     //void attainKnowlege(Vector3 center, float radius)
     //{
     //    Collider[] nearMe = Physics.OverlapSphere(center, radius);
-        
+
     //    if
     //}
-
+    private void doRun()
+    {
+        agent.destination = RunFromPoint();
+        agent.speed = 50;
+    }
+    public Vector3 RunFromPoint()
+    {
+        return -closest.transform.position;
+    }
     void findKnuckles(Vector3 center, float radius)
     {
     Collider[] hitColliders = Physics.OverlapSphere(center, radius);
-
+        closest = null;
     float closestDist = 9999;
         
         foreach (Collider guyhit in hitColliders)
@@ -114,7 +131,12 @@ public class KimAi : MonoBehaviour {
                     closestDist = Vector3.Distance(transform.position, closest.transform.position);
                     
                 }
+                if(hitColliders.Length >= 10)
+                {
+                    
+                }
             }
+           
         }
         
     }

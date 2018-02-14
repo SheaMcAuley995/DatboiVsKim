@@ -79,5 +79,15 @@ public class StateMachine : MonoBehaviour
                 state = boiState.wander;
             }
         }
+        
+        
 	}
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Bullet")
+        {
+            Destroy(gameObject);
+        }
+    }
 }
