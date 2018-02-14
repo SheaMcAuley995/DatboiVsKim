@@ -70,7 +70,7 @@ public class FindTheWay : MonoBehaviour
         Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, step, 0.0f);
         newDir.y = 0;
         transform.rotation = Quaternion.LookRotation(newDir);
-        Debug.DrawLine(transform.position, closest.transform.position);
+      //  Debug.DrawLine(transform.position, closest.transform.position);
         myGun.Shooting();
         //shootKnuckles();
     }

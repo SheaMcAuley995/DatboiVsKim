@@ -47,9 +47,14 @@ public class StateMachine : MonoBehaviour
         switch (state)
         {
             case boiState.wander:
+
                 if (audio.isPlaying == false)
                 {
-                    audio.PlayOneShot(Roamclips[Random.Range(0, 4)]);
+                    audio.PlayOneShot(Roamclips[Random.Range(0, 4)]);   
+                }
+                if (target == null)
+                {
+                    audio.Stop();
                 }
                 wander.DoWander();
                 break;
@@ -57,6 +62,10 @@ public class StateMachine : MonoBehaviour
                 if (audio.isPlaying == false)
                 {
                     audio.PlayOneShot(Chasingclips[Random.Range(0, 4)]);
+                }
+                if (target == null)
+                {
+                    audio.Stop();
                 }
                 follow.DoFollow();
                 break;
