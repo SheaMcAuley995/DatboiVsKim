@@ -3092,23 +3092,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 687fe23c53ea6214896e4bf913c4c6b2, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1611771078 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1781404474163346, guid: 1a2102c01d93d3e4a90e7d2786582ebf,
-    type: 2}
-  m_PrefabInternal: {fileID: 1958174284}
---- !u!65 &1611771085
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1611771078}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 4.06, y: 2.76, z: 1.64}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1632840742
 GameObject:
   m_ObjectHideFlags: 0
@@ -3684,28 +3667,7 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114596732825089692, guid: 1a2102c01d93d3e4a90e7d2786582ebf,
-        type: 2}
-      propertyPath: speed
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 114276315689903406, guid: 1a2102c01d93d3e4a90e7d2786582ebf,
-        type: 2}
-      propertyPath: SearchRadius
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 195540450974306428, guid: 1a2102c01d93d3e4a90e7d2786582ebf,
-        type: 2}
-      propertyPath: m_Radius
-      value: 1.33
-      objectReference: {fileID: 0}
-    - target: {fileID: 195540450974306428, guid: 1a2102c01d93d3e4a90e7d2786582ebf,
-        type: 2}
-      propertyPath: m_Height
-      value: 2.72
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 114694499597545600, guid: 1a2102c01d93d3e4a90e7d2786582ebf, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1a2102c01d93d3e4a90e7d2786582ebf, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &2030469192

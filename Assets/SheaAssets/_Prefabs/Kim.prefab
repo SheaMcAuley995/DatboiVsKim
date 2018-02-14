@@ -280,12 +280,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4992005387144180}
-  - component: {fileID: 114694499597545600}
   - component: {fileID: 195540450974306428}
   - component: {fileID: 114682596278208802}
   - component: {fileID: 114596732825089692}
   - component: {fileID: 54590568543044808}
   - component: {fileID: 114276315689903406}
+  - component: {fileID: 65754945660354444}
   m_Layer: 0
   m_Name: Kim
   m_TagString: Kim
@@ -591,7 +591,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1781404474163346}
   m_LocalRotation: {x: -0, y: -0.85729986, z: -0, w: 0.5148175}
-  m_LocalPosition: {x: 412.88925, y: 83.787, z: 289.15768}
+  m_LocalPosition: {x: 128.16783, y: 1.4863288, z: -43.55213}
   m_LocalScale: {x: 0.3688277, y: 1, z: 0.76903665}
   m_Children:
   - {fileID: 4553549698652946}
@@ -1343,6 +1343,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65754945660354444
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1781404474163346}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.06, y: 2.76, z: 1.64}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65760357575978796
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -1366,13 +1378,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0069e2db7f45ca64aada301ce650704b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRate: 0.09
+  fireRate: 1
   weaponRange: 20
   bullet: {fileID: 54702116008294816, guid: 11da8984c1a9ee6428252daa98625cd0, type: 2}
   gunEnd: {fileID: 4145361107369106}
   muzzleFlash: {fileID: 198000012944515248, guid: 9defeac88977c0d448aa4541073ee9e4,
     type: 2}
-  SearchRadius: 0
+  SearchRadius: 10
 --- !u!114 &114596732825089692
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1385,7 +1397,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 0}
+  targetDir: {x: 0, y: 0, z: 0}
+  speed: 15
   SearchRadius: 15
+  knowlegeSphere: 0
 --- !u!114 &114682596278208802
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1403,26 +1418,6 @@ MonoBehaviour:
   distance: 15
   target: {x: 0, y: 0, z: 0}
   rb: {fileID: 54590568543044808}
---- !u!114 &114694499597545600
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1781404474163346}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7863de02cfb41e41b606ce7e86549c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SearchRadius: 50
-  bullet: {fileID: 54902973635303128, guid: 119551172e2002344983c075ab97ef79, type: 2}
-  closest: {fileID: 0}
-  explosionEffect: {fileID: 1000011797152326, guid: acf39d9f4addf294d93fa56fa373961b,
-    type: 2}
-  explosionForce: 10
-  explosionRadius: 15
-  targetDir: {x: 0, y: 0, z: 0}
-  speed: 500000
 --- !u!195 &195540450974306428
 NavMeshAgent:
   m_ObjectHideFlags: 1
@@ -1431,7 +1426,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1781404474163346}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5000001
+  m_Radius: 1.33
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -1440,7 +1435,7 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 2
+  m_Height: 2.72
   m_BaseOffset: 1.34
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4

@@ -24,29 +24,7 @@ public class FindTheWay : MonoBehaviour
         myGun = GetComponent<Shoot>();
     }
 
-    // Update is called once per frame
-<<<<<<< HEAD
-    void Update()
-    {
-        float step = speed * Time.deltaTime;
-        ExplosionDamage(transform.position, SearchRadius);
 
-        if(closest != null)
-        { targetDir = closest.transform.position - transform.position; }
-        
-        Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, step, 0.0f);
-        
-
-        
-
-        //newDir.y = 0;
-        transform.rotation = Quaternion.LookRotation(newDir);
-      //  Debug.DrawLine(transform.position, closest.transform.position);
-        myGun.Shooting();
-        //shootKnuckles();
-    }
-=======
->>>>>>> 47502c7732c82a352062e0a5ccaa4378ffbb523e
 
     private void OnDrawGizmos()
     {
@@ -89,15 +67,7 @@ public class FindTheWay : MonoBehaviour
         
     }
 
-    //void CheckExplosion()
-    //{
-    //    Collider[] CheckBoom = Physics.OverlapSphere();
-    //    if (CheckBoom.Length >= 10)
-    //    {
 
-    //        Debug.Log("Nice");
-    //    }
-    //}
 
     void explosion()
     {

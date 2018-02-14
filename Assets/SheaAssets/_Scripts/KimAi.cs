@@ -54,7 +54,7 @@ public class KimAi : MonoBehaviour {
     void Update()
     {
         
-
+        
 
         //state = KimState.Attack;
         switch (state)
@@ -98,6 +98,14 @@ public class KimAi : MonoBehaviour {
 
     }
 
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.collider.tag == "Knuckles")
+        {
+            Destroy(gameObject);
+        }
+    }
     //void attainKnowlege(Vector3 center, float radius)
     //{
     //    Collider[] nearMe = Physics.OverlapSphere(center, radius);

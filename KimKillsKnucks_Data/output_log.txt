@@ -1,0 +1,51 @@
+Initialize engine version: 2017.1.0f3 (472613c02cf7)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 770 (ID=0x1184)
+    Vendor:   NVIDIA
+    VRAM:     1989 MB
+    Driver:   22.21.13.8494
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\s179049\Desktop\DatboiVsKim\KimKillsKnucks_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\s179049\Desktop\DatboiVsKim\KimKillsKnucks_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\s179049\Desktop\DatboiVsKim\KimKillsKnucks_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading C:\Users\s179049\Desktop\DatboiVsKim\KimKillsKnucks_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Users\s179049\Desktop\DatboiVsKim\KimKillsKnucks_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\s179049\Desktop\DatboiVsKim\KimKillsKnucks_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\s179049\Desktop\DatboiVsKim\KimKillsKnucks_Data\Managed\Assembly-UnityScript-firstpass.dll (this message is harmless)
+Loading C:\Users\s179049\Desktop\DatboiVsKim\KimKillsKnucks_Data\Managed\Assembly-UnityScript-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Users\s179049\Desktop\DatboiVsKim\KimKillsKnucks_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\s179049\Desktop\DatboiVsKim\KimKillsKnucks_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\s179049\Desktop\DatboiVsKim\KimKillsKnucks_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\s179049\Desktop\DatboiVsKim\KimKillsKnucks_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\s179049\Desktop\DatboiVsKim\KimKillsKnucks_Data\Managed\UnityEngine.Timeline.dll (this message is harmless)
+Loading C:\Users\s179049\Desktop\DatboiVsKim\KimKillsKnucks_Data\Managed\UnityEngine.Timeline.dll into Unity Child Domain
+Platform assembly: C:\Users\s179049\Desktop\DatboiVsKim\KimKillsKnucks_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading C:\Users\s179049\Desktop\DatboiVsKim\KimKillsKnucks_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+Platform assembly: C:\Users\s179049\Desktop\DatboiVsKim\KimKillsKnucks_Data\Managed\System.dll (this message is harmless)
+Platform assembly: C:\Users\s179049\Desktop\DatboiVsKim\KimKillsKnucks_Data\Managed\System.Core.dll (this message is harmless)
+- Completed reload, in  0.685 seconds
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 0.771096 ms
+Setting up 4 worker threads for Enlighten.
+  Thread -> id: 2b9c -> priority: 1 
+  Thread -> id: 2a38 -> priority: 1 
+  Thread -> id: 1eb4 -> priority: 1 
+  Thread -> id: 3acc -> priority: 1 
+The referenced script on this Behaviour (Game Object 'Bullet') is missing!
+ 
+(Filename:  Line: 1758)
+
+The referenced script on this Behaviour (Game Object 'Bullet') is missing!
+ 
+(Filename:  Line: 1758)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 410.868625 ms
+
+Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 1003.
+Total: 2.118169 ms (FindLiveObjects: 0.079925 ms CreateObjectMapping: 0.070254 ms MarkObjects: 0.262531 ms  DeleteObjects: 1.704320 ms)
+

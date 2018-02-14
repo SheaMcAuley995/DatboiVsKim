@@ -1560,7 +1560,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   kim: {fileID: 0}
   speed: 100
-  radius: 10
+  radius: 20
   radius2: 15
   isKim: 0
   showHoodsize: 0
@@ -1588,7 +1588,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 100
   radius: 100
-  jitter: 100
+  jitter: 20
   distance: 100
   target: {x: 0, y: 0, z: 0}
 --- !u!114 &114372028632754642
@@ -1615,7 +1615,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 9c1bb1e0a04afd9428f1b3ddeee9cc31, type: 3}
   target: {fileID: 1091530198920408, guid: ebfdc0763cd5b0a44981e9ed73d1b8d0, type: 2}
   knuckles: {fileID: 1508917727514214}
-  distance: 10
+  distance: 100
   state: 0
 --- !u!135 &135120008142646158
 SphereCollider:

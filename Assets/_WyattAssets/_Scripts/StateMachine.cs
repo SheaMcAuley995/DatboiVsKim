@@ -95,8 +95,7 @@ public class StateMachine : MonoBehaviour
                 }
             }
         }
-<<<<<<< HEAD
-=======
+
         
         
 	}
@@ -107,6 +106,6 @@ public class StateMachine : MonoBehaviour
         {
             Destroy(gameObject);
         }
->>>>>>> 47502c7732c82a352062e0a5ccaa4378ffbb523e
+
     }
 }
